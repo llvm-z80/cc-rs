@@ -188,6 +188,8 @@ fn parse_arch(full_arch: &str) -> Option<&str> {
         "r600" => "r600",
         "s390x" => "s390x",
         "xtensa" => "xtensa",
+        "z80" => "z80",
+        "sm83" => "sm83",
 
         // Arches supported by gcc, but not LLVM.
         arch if arch.starts_with("alpha") => "alpha", // DEC Alpha
@@ -249,6 +251,9 @@ fn parse_envabi(last_component: &str) -> Option<(&str, &str)> {
         // Undesirable to expose to user code (yet):
         // https://github.com/rust-lang/rust/pull/131166#issuecomment-2389541917
         "freestanding" => ("", ""),
+
+        // SDCC toolchain ABI for Z80/SM83 targets
+        "sdcc" => ("sdcc", ""),
 
         _ => return None,
     };
