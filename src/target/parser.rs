@@ -188,7 +188,9 @@ fn parse_arch(full_arch: &str) -> Option<&str> {
         "msp430" => "msp430",
         "r600" => "r600",
         "s390x" => "s390x",
+        "sm83" => "sm83",
         "xtensa" => "xtensa",
+        "z80" => "z80",
 
         // Arches supported by gcc, but not LLVM.
         arch if arch.starts_with("alpha") => "alpha", // DEC Alpha
